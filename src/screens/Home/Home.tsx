@@ -10,7 +10,6 @@ import {
   RemarksField,
   WorkLocationCard,
 } from '@/components/molecules';
-import { BottomNavBar } from '@/components/organisms';
 import { SafeScreen } from '@/components/templates';
 
 function Home() {
@@ -34,8 +33,6 @@ function Home() {
             <PunchButton />
           </View>
         </ScrollView>
-
-        <BottomNavBar />
       </View>
     </SafeScreen>
   );
