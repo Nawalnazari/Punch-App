@@ -1,6 +1,18 @@
 # Punch App
 
-React Native mobile app built with TypeScript.
+Punch is a mobile workforce attendance application designed for remote and hybrid employees to easily record their working hours from anywhere.
+
+The app allows users to securely punch in and punch out, helping organizations track employee attendance, working time, and work schedules without requiring employees to be physically present in the office.
+
+## Features
+
+- Clock In (Punch In) from any location
+- Clock Out (Punch Out) to record end of workday
+- Real-time attendance tracking
+- Remote workforce support
+- Simple and user-friendly interface
+- Accurate work hour recording
+- Attendance history and records
 
 ## Stack
 
