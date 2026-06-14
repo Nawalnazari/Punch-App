@@ -6,7 +6,7 @@ import { Paths } from '@/navigation/paths';
 import type { RootStackParamList } from '@/navigation/types';
 import { useTheme } from '@/theme';
 
-import { Example, Home, Startup } from '@/screens';
+import { Example } from '@/screens';
 
 import BottomTabNavigation from './TabNavigator';
 

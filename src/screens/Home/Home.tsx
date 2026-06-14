@@ -10,10 +10,12 @@ import {
   RemarksField,
   WorkLocationCard,
 } from '@/components/molecules';
+import { PunchConfirmationModal } from '@/components/organisms';
 import { SafeScreen } from '@/components/templates';
 
 function Home() {
   const { backgrounds, gutters, layout } = useTheme();
+  const [isPunchModalVisible, setIsPunchModalVisible] = useState(false);
   const [remarks, setRemarks] = useState('');
 
   return (
@@ -30,9 +32,23 @@ function Home() {
               lastPunchOut="05:00 PM"
               totalPunchIn="08:00"
             />
-            <PunchButton />
+            <PunchButton
+              onPress={() => {
+                setIsPunchModalVisible(true);
+              }}
+            />
           </View>
         </ScrollView>
+
+        <PunchConfirmationModal
+          onClose={() => {
+            setIsPunchModalVisible(false);
+          }}
+          onConfirm={() => {
+            setIsPunchModalVisible(false);
+          }}
+          visible={isPunchModalVisible}
+        />
       </View>
     </SafeScreen>
   );
