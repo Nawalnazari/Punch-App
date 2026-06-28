@@ -3,8 +3,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Paths } from '@/navigation/paths';
 
 import { Example, Home } from '@/screens';
+import Dashboard from '@/screens/Dashboard/Dashboard';
 
-const Tab = createBottomTabNavigator();
+type TabParamList = {
+  dashboard: undefined;
+  example: undefined;
+  home: undefined;
+};
+
+const Tab = createBottomTabNavigator<TabParamList>();
 
 /**
  * Tab Navigator Configuration
@@ -13,10 +20,18 @@ const Tab = createBottomTabNavigator();
 function BottomTabNavigation() {
   return (
     <Tab.Navigator
+      initialRouteName="dashboard"
       screenOptions={{
         headerShown: false,
       }}
     >
+      <Tab.Screen
+        component={Dashboard}
+        name="dashboard"
+        options={{
+          title: 'Dashboard',
+        }}
+      />
       <Tab.Screen
         component={Home}
         name={Paths.Home}
@@ -24,7 +39,7 @@ function BottomTabNavigation() {
           // tabBarIcon: ({ color, size }) => (
           //   <Icon source="home" size={size} color={color} />
           // ),
-          title: 'Home',
+          title: 'Attendance',
         }}
       />
       <Tab.Screen
@@ -34,7 +49,7 @@ function BottomTabNavigation() {
           // tabBarIcon: ({ color, size }) => (
           //   <Icon source="car" size={size} color={color} />
           // ),
-          title: 'Example',
+          title: 'Profile',
         }}
       />
     </Tab.Navigator>
