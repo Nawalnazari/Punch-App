@@ -1,5 +1,3 @@
-import type { ViewProps } from 'react-native';
-
 import { Text, TouchableOpacity, View } from 'react-native';
 
 import { useTheme } from '@/theme';
@@ -9,14 +7,13 @@ type Properties = {
   readonly isActive?: boolean;
   readonly label: string;
   readonly onPress?: () => void;
-} & ViewProps;
+};
 
 function TabItem({
   icon,
   isActive = false,
   label,
-  onPress,
-  ...props
+  onPress = undefined,
 }: Properties) {
   const { backgrounds, fonts, gutters, layout } = useTheme();
 
@@ -30,7 +27,6 @@ function TabItem({
         layout.flex_1,
         gutters.paddingVertical_12,
       ]}
-      {...props}
     >
       <View
         style={[

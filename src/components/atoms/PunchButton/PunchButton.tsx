@@ -6,7 +6,7 @@ type Properties = {
   readonly onPress?: () => void;
 };
 
-function PunchButton({ onPress }: Properties) {
+function PunchButton({ onPress = undefined }: Properties) {
   const { backgrounds, fonts, gutters, layout } = useTheme();
 
   return (
